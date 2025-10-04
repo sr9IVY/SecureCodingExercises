@@ -24,10 +24,9 @@ This repository documents and remediates 10 broken secure coding examples across
 
 # How to Use
 
-Open this repo in **GitHub Codespaces** for a secure cloud-based development environment. Each fix is modular and testable. You can run Python and Node.js examples directly in Codespaces, and Java examples using a configured dev container.
+Open this repo in **GitHub Codespaces** for a secure cloud-based development environment. 
+In the terminan type 
+pip install flask werkzeug requests
+the
+python FixedPythonCodes.py
 
-
-
----
-
-Feel free to fork, clone, or contribute!
