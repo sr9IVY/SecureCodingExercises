@@ -1,0 +1,52 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.log
+.env
+.venv/
+env/
+venv/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# === Node.js ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+.env
+
+# === Java ===
+*.class
+*.jar
+*.war
+*.ear
+*.log
+*.javadoc
+*.java~  # backup files
+target/
+bin/
+build/
+
+# === IDEs & OS ===
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# === Secrets & Configs ===
+*.pem
+*.key
+*.crt
+*.env
+config.yaml
+secrets.json
