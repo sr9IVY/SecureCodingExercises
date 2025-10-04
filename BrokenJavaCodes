@@ -1,0 +1,26 @@
+
+Cryptographic Failures
+3.
+
+public String hashPassword(String password) throws NoSuchAlgorithmException {
+    MessageDigest md = MessageDigest.getInstance("MD5");
+    md.update(password.getBytes());
+    byte[] digest = md.digest();
+    return DatatypeConverter.printHexBinary(digest);
+}
+
+Injection
+5.
+
+String username = request.getParameter("username");
+String query = "SELECT * FROM users WHERE username = '" + username + "'";
+Statement stmt = connection.createStatement();
+ResultSet rs = stmt.executeQuery(query);
+
+
+Identification and Authentication Failures
+10.
+
+if (inputPassword.equals(user.getPassword())) { 
+    // Login success
+}
