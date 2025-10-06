@@ -1,5 +1,4 @@
-# secure_code_combined.py
-
+# FixedNodejs.py
 def ex1_secure():
     # Example fix for input validation
     user_input = input("Enter a number: ")
