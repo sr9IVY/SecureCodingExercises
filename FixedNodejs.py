@@ -1,4 +1,5 @@
 # FixedNodejs.py
+
 def ex1_secure():
     # Example fix for input validation
     user_input = input("Enter a number: ")
@@ -19,7 +20,6 @@ def ex2_secure():
         return "Invalid filename."
 
 def ex_vulnerability_fixed():
-    # This is the one marked as 'Ex # Vulnerability'
     # Example fix for insecure deserialization
     import json
     data = '{"user": "admin", "access": "limited"}'
@@ -30,8 +30,18 @@ def ex_vulnerability_fixed():
         return "Failed to parse JSON."
 
 def main():
-    print("Running Ex # Vulnerability:")
+    print("Running Ex1: Input Validation")
+    print(ex1_secure())
+
+    print("\nRunning Ex2: Command Injection")
+    print(ex2_secure())
+
+    print("\nRunning Ex3: Insecure Deserialization")
     print(ex_vulnerability_fixed())
+
+    print("\n✅ Exercise ran successfully.")
 
 if __name__ == "__main__":
     main()
+
+
