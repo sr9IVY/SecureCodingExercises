@@ -1,47 +1,35 @@
-# FixedNodejs.py
+# Ex1 Broken Access Control FixedNodejs.py
+from flask import Flask, request, jsonify
 
-def ex1_secure():
-    # Example fix for input validation
-    user_input = input("Enter a number: ")
-    try:
-        number = int(user_input)
-        return f"Valid number: {number}"
-    except ValueError:
-        return "Invalid input. Please enter a number."
+app = Flask(__name__)
 
-def ex2_secure():
-    # Example fix for command injection
-    import subprocess
-    filename = input("Enter filename to list: ")
-    if filename.isalnum():
-        result = subprocess.run(["ls", filename], capture_output=True, text=True)
-        return result.stdout
-    else:
-        return "Invalid filename."
+# Simulated user database
+users_db = {
+    "123": {"id": "123", "name": "Alice"},
+    "456": {"id": "456", "name": "Bob"}
+}
 
-def ex_vulnerability_fixed():
-    # Example fix for insecure deserialization
-    import json
-    data = '{"user": "admin", "access": "limited"}'
-    try:
-        parsed = json.loads(data)
-        return f"Parsed safely: {parsed}"
-    except json.JSONDecodeError:
-        return "Failed to parse JSON."
+# Simulated logged-in user
+current_user_id = "123"  # Replace with dynamic auth in real apps
 
-def main():
-    print("Running Ex1: Input Validation")
-    print(ex1_secure())
+@app.route('/profile/<user_id>', methods=['GET'])
+def get_profile(user_id):
+    if user_id != current_user_id:
+        print(f"Access denied for user_id: {user_id}")
+        return jsonify({"error": "Access denied"}), 403
 
-    print("\nRunning Ex2: Command Injection")
-    print(ex2_secure())
+    user = users_db.get(user_id)
+    if not user:
+        print(f"User not found: {user_id}")
+        return jsonify({"error": "User not found"}), 404
 
-    print("\nRunning Ex3: Insecure Deserialization")
-    print(ex_vulnerability_fixed())
+    print("Ex1sc ran successfully")
+    return jsonify(user)
 
-    print("\n✅ Exercise ran successfully.")
+if __name__ == '__main__':
+    app.run(debug=True)
 
-if __name__ == "__main__":
-    main()
+
+
 
 
