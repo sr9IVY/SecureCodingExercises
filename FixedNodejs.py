@@ -23,7 +23,7 @@ def get_profile(user_id):
         print(f"User not found: {user_id}")
         return jsonify({"error": "User not found"}), 404
 
-    print("Ex1sc ran successfully")
+    print("Ex1 ran successfully")
     return jsonify(user)
 
 if __name__ == '__main__':
