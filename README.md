@@ -15,12 +15,6 @@ This repository documents and remediates 10 broken secure coding examples across
 9. Server-Side Request Forgery
 10. Identification and Authentication Failures 
     
-#Repo Structure
-
-- `python_fixes/secure_fixes.py`: Secure implementations for Python vulnerabilities
-- `nodejs_fixes/secure_fixes.js`: Secure implementations for Node.js vulnerabilities
-- `java_fixes/SecureFixes.java`: Secure implementations for Java vulnerabilities
-- `vulnerabilities/*.md`: Detailed write-ups for each vulnerability and its fix
 
 # How to Use
 
